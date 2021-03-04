@@ -1,0 +1,22 @@
+ALGORITHM Sentence_algo
+VAR
+    sentence : string;
+    lengthSentence : INTEGER :=0;
+    nbrwds : INTEGER :=0;
+    nbrvls : INTEGER :=0;
+BEGIN
+    Write("Write your sentence")
+    Read(sentence);
+    REPEAT
+        SWITCH (lengthSentence) DO
+            case " " : nbrwds := nbrwds+1; lengthSentence :=lengthSentence+1;BREAK;
+            case "a","e","i","o","u","y" : nbrvls=nbrvls+1;lengthSentence:=lengthSentence+1;BREAK;
+            default : lengthSentence:=lengthSentence+1;
+        END_SWITCH
+    UNTIL (sentence[lengthSentence]=".")
+    lengthSentence:=lengthSentence+1;
+    nbrwds := nbrwds+1;
+    Write("The length of the sentence is : ",lengthSentence);
+    Write("The number of words in the sentence is : ",nbrwds);
+    Write("The number of vowels in the sentence is : ",nbrvls);
+END
